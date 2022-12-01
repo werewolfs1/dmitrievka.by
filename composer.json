@@ -1,0 +1,15 @@
+{
+    "name": "user/blog-my",
+    "autoload": {
+        "psr-4": {
+            "User\\BlogMy\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "werewolfs1",
+            "email": "sensei_9010@mail.ru"
+        }
+    ],
+    "require": {}
+}

@@ -1,46 +1,16 @@
 <?
-require_once 'D:\Программы\OpenServer\domains\Dmitrievka\src\DataBase.php';
-
-use DataBaseDmitrievka\DataBase;
-
-$config = require_once '/domains/Dmitrievka/config.php';
-
+require_once $_SERVER['DOCUMENT_ROOT'] . '/init.php';
 
 $db = new DataBaseDmitrievka\DataBase($config['db']);
 
 $queryCompany = $db->query('SELECT * FROM company ');
 $queryPortfolio = $db->query('SELECT * FROM portfolio ');
 $db->closeConnection();
-
+require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 ?>
 
-    <!doctype html>
-    <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>Treviso | Responsive HTML5 Template</title>
-        <!-- Load CSS -->
-        <link href="css/style.css" rel="stylesheet" type="text/css"/>
-        <!-- Load Icon Font -->
-        <link href="css/webfont.css" rel="stylesheet" type="text/css"/>
 
-
-        <!-- Load jQuery library -->
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-        <!-- Load jCarousel js -->
-        <script type="text/javascript" src="js/jquery.jcarousel.js"></script>
-        <!-- Load MixItUup js -->
-        <script type="text/javascript" src="js/jquery.mixitup.js"></script>
-        <!-- Load js -->
-        <script type="text/javascript" src="js/custom.js"></script>
-
-
-        <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
-    </head>
-    <!-- Start Body -->
-<body>
-
-<? include "D:\Программы\OpenServer\domains\Dmitrievka\include\menu.php"; ?>
+<? include $_SERVER['DOCUMENT_ROOT'] . "\include\menu.php"; ?>
 
     <!-- Start Home -->
     <a class="scroll" id="home"></a>
@@ -72,18 +42,23 @@ $db->closeConnection();
 
     <ul class="portfoliofilter">
         <?
-        foreach ($queryPortfolio as $portfolioItem) {
-            $allTypes[] = $portfolioItem['type'];
-        }
-        $uniqueTypeArr = array_unique($allTypes);
-        $indexTypeArr = array_values($uniqueTypeArr);
 
-        $allTypes = implode(' ', $indexTypeArr);
+        if (!empty($queryPortfolio)) {
+            foreach ($queryPortfolio as $portfolioItem) {
+                $allTypes[] = $portfolioItem['type'];
+            }
+
+            $uniqueTypeArr = array_unique($allTypes);
+            $indexTypeArr = array_values($uniqueTypeArr);
+
+            $allTypes = implode(' ', $indexTypeArr);
+        }
+
         ?>
 
         <li class="filter active" data-filter="<?= $allTypes ?>">Все</li>
 
-        <? foreach ($indexTypeArr as $portfolioType) {?>
+        <? foreach ($indexTypeArr as $portfolioType) { ?>
 
             <li class="filter" data-filter="<?= $portfolioType ?>"><?= $portfolioType ?></li>
         <? } ?>
@@ -94,14 +69,29 @@ $db->closeConnection();
 
     <ul class="portfolio">
         <? foreach ($queryPortfolio as $portfolioItem) { ?>
-            <li class="item <?=$portfolioItem["type"]?>">
-                <div class="portfolioitem">
-                    <img src="<?=$portfolioItem["img"]?>">
+            <!--            <li class="item --><? //= $portfolioItem["type"] ?><!--">-->
+            <!--                <div class="portfolioitem">-->
+            <!--                    <img src="--><? //= $portfolioItem["img"] ?><!--">-->
+            <!--                    <div class="portfoliohover">-->
+            <!--                        <div class="info">-->
+            <!--                            <h1>+</h1>-->
+            <!--                            <h5>--><? //= $portfolioItem["name"] ?><!--</h5>-->
+            <!--                            <h6>--><? //= $portfolioItem["company"] ?><!--<b class="light-gray">-->
+            <!--                                    / </b>--><? //= $portfolioItem["type"] ?><!--</h6>-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </li>-->
+            <li class="item <?= $portfolioItem["type"] ?>">
+                <div class="portfolioitem_2">
+                    <span class="img_portfolio"
+                          style="background: url(<?= $portfolioItem["img"] ?>);background-position: center;background-size: contain;background-repeat: no-repeat;"></span>
                     <div class="portfoliohover">
                         <div class="info">
                             <h1>+</h1>
-                            <h5><?=$portfolioItem["name"]?></h5>
-                            <h6><?=$portfolioItem["company"]?><b class="light-gray"> / </b><?=$portfolioItem["type"]?></h6>
+                            <h5><?= $portfolioItem["name"] ?></h5>
+                            <h6><?= $portfolioItem["company"] ?><b class="light-gray">
+                                    / </b><?= $portfolioItem["type"] ?></h6>
                         </div>
                     </div>
                 </div>
@@ -111,6 +101,35 @@ $db->closeConnection();
 
     <!-- Clear :) -->
     <div class="clear"></div>
+    <!-- End Content -->
+
+    <!-- Start Section Divider -->
+    <div class="section divider">
+        <h2 id="servicestitle">Мои компании</h2>
+        <a class="scroll" id="services"></a>
+    </div>
+    <!-- End Section Divider -->
+
+    <!-- Start Content -->
+    <p class="main dark-gray" id="services">Места где я работал</p>
+    <div class="content container">
+
+        <!-- Start Main Paragraph -->
+
+
+            <?
+            if (!empty($queryCompany)) {
+                foreach ($queryCompany as $company) {
+                    ?>
+                    <img src="<?= $company['img'] ?>" alt="">
+                    <?
+                }
+            } ?>
+
+
+        <!-- Clear :) -->
+        <div class="clear"></div>
+    </div>
     <!-- End Content -->
 
     <!-- Start Section Divider -->
@@ -538,49 +557,6 @@ $db->closeConnection();
 
     <!-- Start Section Divider -->
     <div class="section divider">
-        <h2 id="servicestitle">Our Services</h2>
-        <a class="scroll" id="services"></a>
-    </div>
-    <!-- End Section Divider -->
-
-    <!-- Start Content -->
-    <div class="content">
-
-        <!-- Start Main Paragraph -->
-        <p class="main dark-gray" id="services">Hover over any of our services to find out more.</p>
-        <!-- Start Main Paragraph -->
-        <?
-
-        if (!empty($queryCompany)) {
-            foreach ($queryCompany as $company) {
-//                echo '<pre>';
-//                print_r($company);
-//                echo '</pre>';
-                ?>
-                <div class="servicesitem">
-                    <a href="http://dmitrievka/company/company.php?company=<?= $company['code'] ?>">
-                        <div class="front">
-                            <div data-icon="<?= $company['img'] ?>" class="icon"></div>
-                            <p><?= $company['discription'] ?></p>
-                        </div>
-                        <div class="back">
-                            <h3><?= $company['name'] ?></h3>
-                        </div>
-                    </a>
-                </div>
-                <?
-            }
-        }
-        ?>
-
-
-        <!-- Clear :) -->
-        <div class="clear"></div>
-    </div>
-    <!-- End Content -->
-
-    <!-- Start Section Divider -->
-    <div class="section divider">
         <h2>Our Team</h2>
         <a class="scroll" id="about"></a>
     </div>
@@ -715,5 +691,5 @@ $db->closeConnection();
     </div>
     <!-- End Content -->
 <?
-include "D:/Программы/OpenServer/domains/Dmitrievka/footer.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/footer.php";
 ?>

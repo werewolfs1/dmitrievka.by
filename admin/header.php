@@ -1,3 +1,7 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'].'/init.php';
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>

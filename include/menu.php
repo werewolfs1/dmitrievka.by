@@ -9,6 +9,7 @@
         <li><a href="#portfolio">Портфолио</a></li>
         <li><a href="#blog">Блог</a></li>
         <li><a href="#contact">Контакты</a></li>
+        <li><a href="/admin/index.php">Админка</a></li>
     </ul>
 </div>
 <!-- End Menu -->

@@ -1,16 +1,9 @@
 <?php
-require_once '/domains/Dmitrievka/admin/header.php';
-require_once 'D:/Программы/OpenServer/domains/Dmitrievka/vendor/autoload.php';
-require_once 'D:/Программы/OpenServer/domains/Dmitrievka/src/DataBase.php';
-$dir = str_replace('\\', '/', __DIR__) . '/';
+require_once $_SERVER['DOCUMENT_ROOT'].'/admin/header.php';
 
-use DataBaseDmitrievka\DataBase;
-
-$config = require_once '/domains/Dmitrievka/config.php';
-
-$db = new DataBaseDmitrievka\DataBase($config['db']);
 
 if (!empty($_REQUEST["name"])) {
+    $db = new DataBaseDmitrievka\DataBase($config['db']);
     $insert = $db->query("INSERT INTO company (name, code, url, img, experience, discription, date) VALUES (:name, :code, :url, :img, :experience, :discription, :date)", [
         'name' => $_REQUEST["name"],
         'code' => $_REQUEST["code"],
@@ -20,10 +13,12 @@ if (!empty($_REQUEST["name"])) {
         'discription' => $_REQUEST["discription"],
         'date' => $_REQUEST["date"]
     ]);
-}
 
-if ($insert > 0) {
-    print "OK";
+    if ($insert > 0) {
+        print "OK";
+    }
+
+    $db->closeConnection();
 }
 ?>
 <!--

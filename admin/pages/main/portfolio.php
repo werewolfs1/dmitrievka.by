@@ -1,19 +1,10 @@
 <?php
-require_once '/domains/Dmitrievka/admin/header.php';
-require_once 'D:/Программы/OpenServer/domains/Dmitrievka/vendor/autoload.php';
-require_once 'D:/Программы/OpenServer/domains/Dmitrievka/src/DataBase.php';
-$dir = str_replace('\\', '/', __DIR__) . '/';
+require_once $_SERVER['DOCUMENT_ROOT'].'/admin/header.php';
 
-use DataBaseDmitrievka\DataBase;
+    $db = new DataBaseDmitrievka\DataBase($config['db']);
 
-$config = require_once '/domains/Dmitrievka/config.php';
-
-$db = new DataBaseDmitrievka\DataBase($config['db']);
-
-$company = $query = $db->query("SELECT name FROM company");
-
-if (!empty($_REQUEST["name"])) {
-
+    $company = $query = $db->query("SELECT name FROM company");
+if (!empty($_REQUEST)){
     $insert = $db->query("INSERT INTO portfolio (name, code, type, img, company) VALUES (:name, :code, :type, :img, :company)", [
         'name' => $_REQUEST["name"],
         'code' => $_REQUEST["code"],
@@ -21,10 +12,10 @@ if (!empty($_REQUEST["name"])) {
         'img' => $_REQUEST["img"],
         'company' => $_REQUEST["company"]
     ]);
-}
 
-if ($insert > 0) {
-    print "OK";
+    if ($insert > 0) {
+        print "OK";
+    }
 }
 ?>
 <!--
@@ -180,7 +171,7 @@ if ($insert > 0) {
     </nav>
     <!-- /.navbar -->
 
-    <? require_once '/domains/Dmitrievka/admin/menu-left.php'; ?>
+    <? require_once  $_SERVER['DOCUMENT_ROOT'].'/admin/menu-left.php'; ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -218,12 +209,12 @@ if ($insert > 0) {
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Название</label>
                                         <input name="name" type="text" class="form-control" id="exampleInputEmail1"
-                                               placeholder="Название компании">
+                                               placeholder="Название проекта">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">code</label>
                                         <input name="code" type="text" class="form-control" id="exampleInputPassword1"
-                                               placeholder="url">
+                                               placeholder="Символьный код">
                                     </div>
                                     <div class="form-group">
                                         <label>Тип разработчика</label>
@@ -267,4 +258,4 @@ if ($insert > 0) {
     </aside>
     <!-- /.control-sidebar -->
 
-    <?= require_once '/domains/Dmitrievka/admin/footer.php'; ?>
+    <?= require_once  $_SERVER['DOCUMENT_ROOT'].'/admin/footer.php'; ?>

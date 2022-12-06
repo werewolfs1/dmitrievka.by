@@ -1,12 +1,5 @@
 <?php
-
-require_once  '/domains/Dmitrievka/admin/header.php';
-require_once  '/domains/Dmitrievka/vendor/autoload.php';
-require_once  'D:\Программы\OpenServer\domains\Dmitrievka\src\DataBase.php';
-
-use DataBaseDmitrievka\DataBase;
-
-$config = require_once '/domains/Dmitrievka/config.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/admin/header.php';
 
 $db = new DataBaseDmitrievka\DataBase($config['db']);
 
@@ -268,4 +261,4 @@ if ($insert > 0 ){
     </aside>
     <!-- /.control-sidebar -->
 
-<?require_once  '/domains/Dmitrievka/admin/footer.php';?>
+<?require_once  $_SERVER['DOCUMENT_ROOT'].'/admin/footer.php';?>

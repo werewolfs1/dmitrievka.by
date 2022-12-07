@@ -11,7 +11,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 
 
 <? include $_SERVER['DOCUMENT_ROOT'] . "\include\menu.php"; ?>
-
     <!-- Start Home -->
     <a class="scroll" id="home"></a>
     <div class="home hero">
@@ -117,14 +116,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
         <!-- Start Main Paragraph -->
 
 
-            <?
-            if (!empty($queryCompany)) {
-                foreach ($queryCompany as $company) {
-                    ?>
-                    <img src="<?= $company['img'] ?>" alt="">
-                    <?
-                }
-            } ?>
+        <?
+        if (!empty($queryCompany)) {
+            foreach ($queryCompany as $company) {
+                ?>
+                <img src="<?= $company['img'] ?>" alt="">
+                <?
+            }
+        } ?>
 
 
         <!-- Clear :) -->
@@ -134,297 +133,65 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 
     <!-- Start Section Divider -->
     <div class="section divider">
-        <h2>DDDDD</h2>
+        <h2>Мои скилы</h2>
         <a class="scroll" id="blog"></a>
     </div>
     <!-- End Section Divider -->
 
-    <!-- Start Content -->
-    <div class="content">
-
-        <!-- Start Content -->
-        <div class="content sidebar" id="snippets">
-
-            <!-- Start Article -->
-            <article class="post">
-                <div class="hover">
-                    <div class="postimage">
-                        <img src="img/post1.jpg">
-                        <div class="posthover"><a class="openpost" href="javascript:void(0);" data-id="2">read more</a>
-                        </div>
-                    </div>
-                    <div class="postinfo">
-                        <h6 class="mid-gray"><b class="dark-gray">Posted:</b> 17/9/13</h6>
-                        <h6 class="mid-gray"><b class="dark-gray">Author:</b> Zan</h6>
-                        <h6 class="mid-gray"><b class="dark-gray">Comments:</b> 3</h6>
-                    </div>
-                </div>
-
-                <h3>A boat</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
-
-            </article>
-            <!-- End Article -->
-
-            <!-- Start Article -->
-            <article class="post">
-                <div class="hover">
-                    <div class="postimage">
-                        <img src="img/post2.jpg">
-                        <div class="posthover"><a class="openpost" href="javascript:void(0);" data-id="2">read more</a>
-                        </div>
-                    </div>
-                    <div class="postinfo">
-                        <h6 class="mid-gray"><b class="dark-gray">Posted:</b> 17/9/13</h6>
-                        <h6 class="mid-gray"><b class="dark-gray">Author:</b> Zan</h6>
-                        <h6 class="mid-gray"><b class="dark-gray">Comments:</b> 3</h6>
-                    </div>
-                </div>
-
-                <h3>Another boat</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
-
-            </article>
-            <!-- End Article -->
-
-            <!-- Start Article -->
-            <article class="post">
-                <div class="hover">
-                    <div class="postimage">
-                        <img src="img/post3.jpg">
-                        <div class="posthover"><a class="openpost" href="javascript:void(0);" data-id="2">read more</a>
-                        </div>
-                    </div>
-                    <div class="postinfo">
-                        <h6 class="mid-gray"><b class="dark-gray">Posted:</b> 17/9/13</h6>
-                        <h6 class="mid-gray"><b class="dark-gray">Author:</b> Zan</h6>
-                        <h6 class="mid-gray"><b class="dark-gray">Comments:</b> 3</h6>
-                    </div>
-                </div>
-
-                <h3>One more boat</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
-
-            </article>
-            <!-- End Article -->
-
-
-            <!-- Clear :) -->
-            <div class="clear"></div>
+    <div class="content container hover_block">
+        <div class="text">
+            <i class="fa-brands fa-html5"></i>
         </div>
-        <!-- End Content -->
-
-        <!-- Start Content -->
-        <div class="content sidebar" id="postsfull">
-
-            <!-- Start Article -->
-            <article class="post full" data-id="1">
-                <div class="hover">
-                    <div class="postimage">
-                        <img src="img/post1.jpg">
-                        <div class="posthover"><a class="backtoblog" href="javascript:void(0);" data-id="1"><< back to
-                                blog</a></div>
-                    </div>
-                    <div class="postinfo">
-                        <h6 class="mid-gray"><b class="dark-gray">Posted:</b> 17/9/13</h6>
-                        <h6 class="mid-gray"><b class="dark-gray">Author:</b> Zan</h6>
-                        <h6 class="mid-gray"><b class="dark-gray">Comments:</b> 3</h6>
-                    </div>
-                </div>
-                <div class="clear"></div>
-                <h3>A boat</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    <br>
-                    <br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    <br>
-                    <br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    <br>
-                    <br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </article>
-            <!-- End Article -->
-
-            <!-- Start Article -->
-            <article class="post full" data-id="2">
-                <div class="hover">
-                    <div class="postimage">
-                        <img src="img/post2.jpg">
-                        <div class="posthover"><a class="backtoblog" href="javascript:void(0);" data-id="1"><< back to
-                                blog</a></div>
-                    </div>
-                    <div class="postinfo">
-                        <h6 class="mid-gray"><b class="dark-gray">Posted:</b> 17/9/13</h6>
-                        <h6 class="mid-gray"><b class="dark-gray">Author:</b> Zan</h6>
-                        <h6 class="mid-gray"><b class="dark-gray">Comments:</b> 3</h6>
-                    </div>
-                </div>
-                <div class="clear"></div>
-                <h3>Another boat</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    <br>
-                    <br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    <br>
-                    <br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    <br>
-                    <br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </article>
-            <!-- End Article -->
-
-            <!-- Start Article -->
-            <article class="post full" data-id="3">
-                <div class="hover">
-                    <div class="postimage">
-                        <img src="img/post3.jpg">
-                        <div class="posthover"><a class="backtoblog" href="javascript:void(0);" data-id="1"><< back to
-                                blog</a></div>
-                    </div>
-                    <div class="postinfo">
-                        <h6 class="mid-gray"><b class="dark-gray">Posted:</b> 17/9/13</h6>
-                        <h6 class="mid-gray"><b class="dark-gray">Author:</b> Zan</h6>
-                        <h6 class="mid-gray"><b class="dark-gray">Comments:</b> 3</h6>
-                    </div>
-                </div>
-                <div class="clear"></div>
-                <h3>One more boat</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    <br>
-                    <br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    <br>
-                    <br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    <br>
-                    <br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </article>
-            <!-- End Article -->
-
-            <!-- Clear :) -->
-            <div class="clear"></div>
+        <div class="text">
+            <i class="fa-brands fa-css3-alt"></i>
         </div>
-        <!-- End Content -->
-
-        <!-- Start Sidebar -->
-        <div id="sidebar" class="sidebar">
-
-            <div class="widget">
-                <h5>Blog Categories</h5>
-                <ul>
-                    <li><h6><b class="light-gray">></b> <a href="#">Lifestyle</a><span class="light-gray"> (4)</span>
-                        </h6></li>
-                    <li><h6><b class="light-gray">></b> <a href="#">Design</a><span class="light-gray"> (2)</span></h6>
-                    </li>
-                    <li><h6><b class="light-gray">></b> <a href="#">Dribbble</a><span class="light-gray"> (6)</span>
-                        </h6></li>
-                    <li><h6><b class="light-gray">></b> <a href="#">Food</a><span class="light-gray"> (1)</span></h6>
-                    </li>
-                    <li><h6><b class="light-gray">></b> <a href="#">Twitter</a><span class="light-gray"> (2)</span></h6>
-                    </li>
-                    <li><h6><b class="light-gray">></b> <a href="#">Quotes</a><span class="light-gray"> (7)</span></h6>
-                    </li>
-                    <li><h6><b class="light-gray">></b> <a href="#">Late Night</a><span class="light-gray"> (1)</span>
-                        </h6></li>
-                </ul>
-            </div>
-
-            <div class="widget">
-                <h5>Text Widget</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-
-            <div class="widget twitter">
-                <h5>Twitter Widget</h5>
-                <a class="tweet" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-                <a class="tweet" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-                <a class="tweet" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-            </div>
-
-            <!-- Clear :) -->
-            <div class="clear"></div>
+        <div class="text">
+            <i class="fa-brands fa-js"></i>
         </div>
-        <!-- End Sidebar -->
 
-        <!-- Clear :) -->
-        <div class="clear"></div>
+        <div class="text">
+            <i class="fa-brands fa-php"></i>
+        </div>
+        <div class="text">
+            <i class="fa-brands fa-github"></i>
+        </div>
+        <div class="text" style="display: flex">
+            <i class="fa-light fa-s"></i>
+            <i class="fa-light fa-q"></i>
+            <i class="fa-light fa-l"></i>
+        </div>
+        <div class="text sharp" style="display: flex">
+            <i class="fa-solid fa-c"></i>
+            <p>#</p>
+        </div>
+        <div class="skills_value">
+
+            <div class="skills_fields"> HTML</div>
+
+            <div class="skills_fields">
+                <div class="">Css</div>
+                <div class="">SCSS</div>
+                <div class="">LESS</div>
+            </div>
+            <div class="skills_fields">
+                <div>JS</div>
+                <div>Jquery</div>
+                <div>Vie JS</div>
+            </div>
+            <div class="skills_fields">
+                <div>PHP</div>
+                <div>Laravel</div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="skills_fields"></div>
+        </div>
     </div>
-    <!-- End Content -->
 
+    <div class="section divider">
+        <h2>Другое</h2>
+        <a class="scroll" id="blog"></a>
+    </div>
     <!-- Start Content -->
     <div class="content">
 
@@ -679,11 +446,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
         <!-- Start Main Paragraph -->
 
         <div class="logos">
-            <img data-text="Lorem ipsum something" src="img/logo.png">
-            <img data-text="Lorem ipsum something" src="img/logo.png">
-            <img data-text="Lorem ipsum something" src="img/logo.png">
-            <img data-text="Lorem ipsum something" src="img/logo.png">
-            <img data-text="Lorem ipsum something" src="img/logo.png">
+<!--            <img data-text="Lorem ipsum something" src="img/logo.png">-->
+<!--            <img data-text="Lorem ipsum something" src="img/logo.png">-->
+<!--            <img data-text="Lorem ipsum something" src="img/logo.png">-->
+<!--            <img data-text="Lorem ipsum something" src="img/logo.png">-->
+<!--            <img data-text="Lorem ipsum something" src="img/logo.png">-->
         </div>
 
         <!-- Clear :) -->

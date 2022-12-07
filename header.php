@@ -8,6 +8,10 @@
     <!-- Load Icon Font -->
     <link href="css/webfont.css" rel="stylesheet" type="text/css"/>
 
+    <!-- our project just needs Font Awesome Solid + Brands -->
+    <link href="/plugins/fontawesome-free-6.2.1-web/fontawesome-free-6.2.1-web/css/fontawesome.css" rel="stylesheet">
+    <link href="/plugins/fontawesome-free-6.2.1-web/fontawesome-free-6.2.1-web/css/brands.css" rel="stylesheet">
+    <link href="/plugins/fontawesome-free-6.2.1-web/fontawesome-free-6.2.1-web/css/solid.css" rel="stylesheet">
 
     <!-- Load jQuery library -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
